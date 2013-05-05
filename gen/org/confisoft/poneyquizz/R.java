@@ -39,12 +39,13 @@ public final class R {
         public static final int about_imageview_gm=0x7f090001;
         public static final int about_imageview_sbd=0x7f090000;
         public static final int about_textview=0x7f090002;
-        public static final int action_settings=0x7f09000d;
-        public static final int disabled_shape=0x7f09000a;
-        public static final int focused_shape=0x7f09000b;
-        public static final int icon=0x7f090008;
-        public static final int label=0x7f090009;
-        public static final int pressed_shape=0x7f09000c;
+        public static final int action_settings=0x7f09000e;
+        public static final int disabled_shape=0x7f09000b;
+        public static final int focused_shape=0x7f09000c;
+        public static final int icon=0x7f090009;
+        public static final int label=0x7f09000a;
+        public static final int pressed_shape=0x7f09000d;
+        public static final int quizz_description_textview=0x7f090008;
         public static final int quizzlist_textview=0x7f090006;
         public static final int quizzlistview=0x7f090007;
         public static final int start_button=0x7f090004;
@@ -54,7 +55,8 @@ public final class R {
         public static final int activity_about=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_quizzlist=0x7f030002;
-        public static final int rowlayout=0x7f030003;
+        public static final int activity_startquizz=0x7f030003;
+        public static final int rowlayout=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -65,6 +67,7 @@ public final class R {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int continuequizz_button_text=0x7f060008;
+        public static final int quizz_description_text=0x7f060009;
         public static final int quizzlist_text=0x7f060006;
         public static final int start_button_text=0x7f060003;
         public static final int startquizz_button_text=0x7f060007;

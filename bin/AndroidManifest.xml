@@ -10,6 +10,7 @@
 
     <application
         android:allowBackup="true"
+        android:name=".PoneyQuizzApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -28,6 +29,10 @@
         </activity>
         <activity
             android:name="org.confisoft.poneyquizz.QuizzlistActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="org.confisoft.poneyquizz.StartquizzActivity"
             android:label="@string/app_name" >
         </activity>
     </application>

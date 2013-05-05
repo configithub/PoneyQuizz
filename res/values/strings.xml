@@ -14,5 +14,7 @@
     <string name="quizzlist_text">Choisir un quizz:</string>
     <string name="startquizz_button_text">Commencer</string>
     <string name="continuequizz_button_text">Reprendre</string>
+    
+    <string name="quizz_description_text">Description</string>
 
 </resources>

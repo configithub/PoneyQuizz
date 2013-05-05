@@ -1,9 +1,10 @@
 package org.confisoft.poneyquizz;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -16,7 +17,7 @@ public class QuizzlistActivity extends Activity {
 	ListView listView;
 	
 	// data structure
-	List<Model> list;
+	List<Quizz> list;
 	
 	// adapter between the data structure and the scrolling list
 	CustomArrayAdapter adapter;
@@ -34,7 +35,10 @@ public class QuizzlistActivity extends Activity {
 		setContentView(R.layout.activity_quizzlist);
 		// create the data structure that will be used to populate the listView
 		listView = (ListView) findViewById(R.id.quizzlistview);
-		list = getModel();
+		// recover the master data structure via the application class
+		PoneyQuizzApplication appState = ((PoneyQuizzApplication)this.getApplication());
+		appState.populateWithHardcodedStuff();
+		list = appState.getQuizzs();
 		// the adapter tells the listView how it should display its children
 		// it also holds the list data structure that will populate the listView
 		adapter = new CustomArrayAdapter(this, list);
@@ -47,6 +51,7 @@ public class QuizzlistActivity extends Activity {
 	}
 	
 	private void addOnItemClickListener() {
+		final Context context = this;
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, final View view,
@@ -54,51 +59,14 @@ public class QuizzlistActivity extends Activity {
 				// final String item = (String) parent.getItemAtPosition(position);
 				// recover the index of the selected element
 				selectedItem = position;
+				
+				Intent intent = new Intent(context, StartquizzActivity.class);
+				intent.putExtra("quizzToStart", position);
+				startActivity(intent);
 			}
 		});
 	}
 	
-	private List<Model> getModel() {
-		List<Model> list = new ArrayList<Model>();
-		list.add(get("Linux"));
-		list.add(get("Windows7"));
-		list.add(get("Suse"));
-		list.add(get("Eclipse"));
-		list.add(get("Ubuntu"));
-		list.add(get("Solaris"));
-		list.add(get("Android"));
-		list.add(get("iPhone"));
-		list.add(get("Linux"));
-		list.add(get("Windows7"));
-		list.add(get("Suse"));
-		list.add(get("Eclipse"));
-		list.add(get("Ubuntu"));
-		list.add(get("Solaris"));
-		list.add(get("Android"));
-		list.add(get("iPhone"));
-		list.add(get("Linux"));
-		list.add(get("Windows7"));
-		list.add(get("Suse"));
-		list.add(get("Eclipse"));
-		list.add(get("Ubuntu"));
-		list.add(get("Solaris"));
-		list.add(get("Android"));
-		list.add(get("iPhone"));
-		list.add(get("Linux"));
-		list.add(get("Windows7"));
-		list.add(get("Suse"));
-		list.add(get("Eclipse"));
-		list.add(get("Ubuntu"));
-		list.add(get("Solaris"));
-		list.add(get("Android"));
-		list.add(get("iPhone"));
-		// Initially select one of the items
-		list.get(1).setSelected(true);
-		return list;
-	}
-
-	private Model get(String s) {
-		return new Model(s);
-	}
+	
 	
 }

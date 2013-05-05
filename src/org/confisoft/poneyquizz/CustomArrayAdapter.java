@@ -10,11 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CustomArrayAdapter extends ArrayAdapter<Model> {
+public class CustomArrayAdapter extends ArrayAdapter<Quizz> {
 	private final Context context;
-	private final List<Model> values;
+	private final List<Quizz> values;
 
-	public CustomArrayAdapter(Context context, List<Model> values) {
+	public CustomArrayAdapter(Context context, List<Quizz> values) {
 		super(context, R.layout.rowlayout, values);
 		this.context = context;
 		this.values = values;
